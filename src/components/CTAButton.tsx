@@ -23,7 +23,7 @@ export const CTAButton = ({
   };
 
   const defaultTexts = {
-    cta: "COMPRAR AGORA",
+    cta: "QUERO VER ESSA TRANSFORMAÇÃO AGORA",
     hero: "QUERO MELHORAR MINHA PERFORMANCE",
     energy: "RECUPERAR MINHA CONFIANÇA"
   };
