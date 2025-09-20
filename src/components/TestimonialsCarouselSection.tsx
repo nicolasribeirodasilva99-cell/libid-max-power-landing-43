@@ -9,12 +9,12 @@ import {
 } from "@/components/ui/carousel";
 import { Star } from "lucide-react";
 
-// Importar as imagens dos clientes
-import joaoImage from "@/assets/testimonials/joao.png";
-import marcosImage from "@/assets/testimonials/marcos.png";
-import andreImage from "@/assets/testimonials/andre.png";
-import eduardoImage from "@/assets/testimonials/eduardo.png";
-import patriciaImage from "@/assets/testimonials/patricia.png";
+// Usar as imagens dos assets que existem
+const joaoImage = "/src/assets/testimonials/joao.png";
+const marcosImage = "/src/assets/testimonials/marcos.png";
+const andreImage = "/src/assets/testimonials/andre.png";
+const eduardoImage = "/src/assets/testimonials/eduardo.png";
+const patriciaImage = "/src/assets/testimonials/patricia.png";
 
 export const TestimonialsCarouselSection = () => {
   const testimonials = [

@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { CTAButton } from "./CTAButton";
-import naturalBanner from "@/assets/libid-max-natural.png";
+// import naturalBanner from "@/assets/libid-max-natural.png";
 import { Shield, Package, Lock, Clock, Zap } from "lucide-react";
 
 export const GuaranteeSection = () => {
@@ -64,11 +64,10 @@ export const GuaranteeSection = () => {
 
         {/* Banner 100% Natural */}
         <div className="flex justify-center mb-12">
-          <img 
-            src={naturalBanner} 
-            alt="Produto 100% Natural - Sem Risco para Sua Saúde"
-            className="max-w-md w-full h-auto rounded-lg shadow-xl"
-          />
+          <div className="bg-gradient-to-r from-energy/20 to-power/20 border-2 border-energy/30 rounded-xl p-8 text-center max-w-md">
+            <h3 className="text-2xl font-bold text-energy mb-2">100% NATURAL</h3>
+            <p className="text-foreground font-semibold">Sem Risco para Sua Saúde</p>
+          </div>
         </div>
 
         {/* Destaque especial para pagamento */}

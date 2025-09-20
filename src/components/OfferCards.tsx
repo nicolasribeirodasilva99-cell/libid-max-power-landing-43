@@ -4,16 +4,22 @@ import { CTAButton } from "@/components/CTAButton";
 interface OfferCardProps {
   title: string;
   subtitle?: string;
+  description?: string;
   currentPrice: number;
-  installmentPrice: number;
+  originalPrice?: number | null;
+  discount?: string | null;
+  ctaText?: string;
   isPopular?: boolean;
   imageQuantity: number;
 }
 const OfferCard = ({
   title,
   subtitle,
+  description,
   currentPrice,
-  installmentPrice,
+  originalPrice,
+  discount,
+  ctaText,
   isPopular,
   imageQuantity
 }: OfferCardProps) => {
@@ -38,6 +44,15 @@ const OfferCard = ({
         <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">{title}</h3>
         {subtitle && <p className="text-xs sm:text-sm text-muted-foreground mb-4">{subtitle}</p>}
 
+        {/* Descrição */}
+        {description && (
+          <div className="mb-4 text-left">
+            {description.split('\n').map((line, index) => (
+              <p key={index} className="text-xs sm:text-sm text-muted-foreground mb-1">{line}</p>
+            ))}
+          </div>
+        )}
+
         {/* Imagem promocional */}
         <div className="relative mb-4 sm:mb-6">
           <div className="flex justify-center items-center mb-3 sm:mb-4">
@@ -47,14 +62,24 @@ const OfferCard = ({
 
          {/* Preços */}
          <div className="mb-4 sm:mb-6">
+           {originalPrice && (
+             <div className="text-sm text-muted-foreground line-through mb-1">
+               De R$ {originalPrice.toFixed(2).replace('.', ',')}
+             </div>
+           )}
            <div className="text-2xl sm:text-3xl font-bold text-energy mb-2">
              R$ {currentPrice.toFixed(2).replace('.', ',')}
            </div>
+           {discount && (
+             <div className="text-sm font-bold text-energy">
+               {discount}
+             </div>
+           )}
          </div>
 
         {/* Botão de compra */}
         <CTAButton variant="cta" size="lg" className="w-full animate-pulse-soft">
-          COMPRAR AGORA
+          {ctaText || "COMPRAR AGORA"}
         </CTAButton>
       </CardContent>
     </Card>;
@@ -63,21 +88,30 @@ export const OfferCards = () => {
   const offers = [{
     title: "1 POTE",
     subtitle: "1 mês de tratamento",
+    description: "💡 Ideal para experimentar ou para quem busca resultados iniciais.",
     currentPrice: 149.99,
-    installmentPrice: 14.27,
+    originalPrice: null,
+    discount: null,
+    ctaText: "🔵 Quero Experimentar Agora",
     imageQuantity: 1
   }, {
     title: "3 POTES",
     subtitle: "3 meses de tratamento",
+    description: "🚀 Melhor custo-benefício → 20% OFF\n💡 Resultados consistentes, progresso visível em energia e desempenho.",
     currentPrice: 299.99,
-    installmentPrice: 28.54,
+    originalPrice: 489,
+    discount: "20% OFF",
+    ctaText: "Quero Resultados Completos Agora",
     isPopular: true,
     imageQuantity: 3
   }, {
     title: "5 POTES",
     subtitle: "5 meses de tratamento",
+    description: "🚀 Transformação total + continuidade para saúde e energia.\n💡 Resultados sólidos e duradouros.",
     currentPrice: 399.99,
-    installmentPrice: 38.06,
+    originalPrice: 600,
+    discount: "47% OFF",
+    ctaText: "🔵 Quero Potência Máxima a Longo Prazo",
     imageQuantity: 5
   }];
   return <section className="py-12 sm:py-16 px-3 sm:px-4 bg-gradient-to-b from-background to-muted/20">
