@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Libid Max - Sistema de Design de Alta Conversão 
+Cores masculinas e impactantes: preto, vermelho, laranja
+*/
+
+@layer base {
+  :root {
+    /* Cores principais - tema masculino e impactante */
+    --background: 0 0% 5%; /* Preto profundo */
+    --foreground: 0 0% 98%; /* Branco puro para contraste */
+
+    --card: 0 0% 8%; /* Preto suave para cards */
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Sistema de cores para conversão */
+    --primary: 0 0% 0%; /* Preto absoluto */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%; /* Cinza escuro */
+    --secondary-foreground: 0 0% 95%;
+
+    /* Cores de energia e masculinidade */
+    --energy: 0 85% 50%; /* Vermelho vibrante */
+    --energy-foreground: 0 0% 100%;
+    
+    --power: 25 95% 55%; /* Laranja potente */
+    --power-foreground: 0 0% 0%;
+
+    /* Tons complementares */
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 85% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 15%;
+    --ring: 0 85% 50%;
+
+    /* Gradientes de conversão */
+    --gradient-hero: linear-gradient(135deg, hsl(0 85% 50%), hsl(25 95% 55%));
+    --gradient-cta: linear-gradient(135deg, hsl(25 95% 55%), hsl(35 100% 60%));
+    --gradient-power: linear-gradient(180deg, hsl(0 0% 5%), hsl(0 0% 8%));
+    --gradient-section: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 12%));
+    
+    /* Sombras impactantes */
+    --shadow-energy: 0 10px 40px hsl(0 85% 50% / 0.3);
+    --shadow-power: 0 10px 40px hsl(25 95% 55% / 0.3);
+    --shadow-deep: 0 20px 60px hsl(0 0% 0% / 0.6);
+    
+    /* Animações de conversão */
+    --transition-power: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-smooth: all 0.2s ease-out;
+    --transition-ultra-smooth: all 0.15s ease-out;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+
+  /* Scroll suave para toda a página */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Animações suaves personalizadas */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .hover-lift {
+    transition: all 0.2s ease-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .smooth-border {
+    transition: border-color 0.2s ease-out;
+  }
+  
+  .ultra-smooth {
+    transition: var(--transition-ultra-smooth);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
