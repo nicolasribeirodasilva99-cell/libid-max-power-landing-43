@@ -41,9 +41,7 @@ const Index = () => {
             size="lg" 
             className="w-full shadow-2xl animate-glow hover-lift"
             onClick={scrollToTop}
-          >
-            QUERO RECEBER EM CASA
-          </CTAButton>
+          />
         </div>
       </div>
       

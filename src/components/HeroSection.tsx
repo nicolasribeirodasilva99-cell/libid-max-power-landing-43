@@ -58,9 +58,8 @@ export const HeroSection = () => {
         {/* Seção Inferior - CTA */}
         <div className="container mx-auto px-3 sm:px-4 pb-8 sm:pb-12">
           <div className="text-center space-y-4 max-w-2xl mx-auto">
-            <CTAButton variant="cta" size="lg" className="w-full max-w-md mx-auto animate-glow hover-lift text-xs sm:text-sm">
-              🔥 QUERO ACABAR COM A BROXADA
-            </CTAButton>
+            <CTAButton variant="cta" size="lg" className="w-full max-w-md mx-auto animate-glow hover-lift text-xs sm:text-sm" />
+            
             
             <p className="text-xs sm:text-sm text-muted-foreground">✔ Pagamento só na entrega  ✔ Envio 100% discreto  ✔ Garantia total de 30 dias
           </p>

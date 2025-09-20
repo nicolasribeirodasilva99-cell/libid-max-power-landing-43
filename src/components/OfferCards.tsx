@@ -79,7 +79,7 @@ const OfferCard = ({
 
         {/* Botão de compra */}
         <CTAButton variant="cta" size="lg" className="w-full animate-pulse-soft">
-          {ctaText || "COMPRAR AGORA"}
+          {ctaText}
         </CTAButton>
       </CardContent>
     </Card>;
