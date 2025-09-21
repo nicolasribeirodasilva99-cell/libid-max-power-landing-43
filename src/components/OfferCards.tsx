@@ -56,9 +56,13 @@ const OfferCard = ({
         )}
 
         {/* Imagem promocional */}
-        <div className="relative mb-4 sm:mb-6">
-          <div className="flex justify-center items-center mb-3 sm:mb-4">
-            <img src={getProductImage()} alt={`Libid Max - ${imageQuantity} ${imageQuantity === 1 ? 'pote' : 'potes'}`} className="w-full max-w-xs sm:max-w-sm h-auto object-contain rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover-lift" />
+        <div className="relative mb-4 sm:mb-6 flex-grow flex items-center justify-center">
+          <div className="flex justify-center items-center mb-3 sm:mb-4 h-48 sm:h-56">
+            <img 
+              src={getProductImage()} 
+              alt={`Libid Max - ${imageQuantity} ${imageQuantity === 1 ? 'pote' : 'potes'}`} 
+              className="w-full max-w-xs sm:max-w-sm h-full object-contain rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover-lift" 
+            />
           </div>
         </div>
 
