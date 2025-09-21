@@ -28,13 +28,13 @@ const OfferCard = ({
   const getProductImage = () => {
     switch (imageQuantity) {
       case 1:
-        return "/lovable-uploads/02839a20-cd24-4578-bf16-e199125d5f1f.png";
+        return "/lovable-uploads/libid-max-1-pot-new.png";
       case 3:
-        return "/lovable-uploads/04fc3ea9-4707-46fd-8998-7128f3b928a8.png";
+        return "/lovable-uploads/libid-max-3-pots-new.png";
       case 5:
-        return "/lovable-uploads/38d72069-ff3e-4052-be3f-4397400a9e31.png";
+        return "/lovable-uploads/libid-max-5-pots-new.png";
       default:
-        return "/lovable-uploads/02839a20-cd24-4578-bf16-e199125d5f1f.png";
+        return "/lovable-uploads/libid-max-1-pot-new.png";
     }
   };
   return <Card className={`relative bg-card/50 backdrop-blur-sm border-2 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover-lift ultra-smooth animate-scale-in ${isPopular ? 'border-energy shadow-energy/20 animate-glow' : 'border-border'} flex flex-col h-full`}>
