@@ -7,6 +7,7 @@ interface CTAButtonProps {
   className?: string;
   children?: React.ReactNode;
   onClick?: () => void;
+  href?: string;
 }
 
 export const CTAButton = ({ 
@@ -14,7 +15,8 @@ export const CTAButton = ({
   size = "lg", 
   className = "",
   children,
-  onClick 
+  onClick,
+  href 
 }: CTAButtonProps) => {
   const sizeClasses = {
     default: "h-10 px-3 py-2 text-sm",
@@ -28,11 +30,19 @@ export const CTAButton = ({
     energy: "RECUPERAR MINHA CONFIANÇA"
   };
 
+  const handleClick = () => {
+    if (href) {
+      window.open(href, '_blank', 'noopener,noreferrer');
+    } else if (onClick) {
+      onClick();
+    }
+  };
+
   return (
     <Button
       variant={variant}
       className={`${sizeClasses[size]} ${className} uppercase hover-lift ultra-smooth font-bold`}
-      onClick={onClick}
+      onClick={handleClick}
     >
       <div className="flex items-center justify-center gap-1 sm:gap-2">
         {variant === "cta" && <ShoppingCart className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />}

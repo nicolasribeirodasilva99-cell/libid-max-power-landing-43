@@ -11,6 +11,7 @@ interface OfferCardProps {
   ctaText?: string;
   isPopular?: boolean;
   imageQuantity: number;
+  href?: string;
 }
 const OfferCard = ({
   title,
@@ -21,7 +22,8 @@ const OfferCard = ({
   discount,
   ctaText,
   isPopular,
-  imageQuantity
+  imageQuantity,
+  href
 }: OfferCardProps) => {
   const getProductImage = () => {
     switch (imageQuantity) {
@@ -78,7 +80,12 @@ const OfferCard = ({
          </div>
 
         {/* Botão de compra */}
-        <CTAButton variant="cta" size="lg" className="w-full animate-pulse-soft">
+        <CTAButton 
+          variant="cta" 
+          size="lg" 
+          className="w-full animate-pulse-soft"
+          href={href}
+        >
           {ctaText}
         </CTAButton>
       </CardContent>
@@ -93,7 +100,8 @@ export const OfferCards = () => {
     originalPrice: null,
     discount: null,
     ctaText: "🔵 Quero Experimentar Agora",
-    imageQuantity: 1
+    imageQuantity: 1,
+    href: "https://eondigital.com.br/new_agendar_pedido?ofe=2566&ref=6693"
   }, {
     title: "3 POTES",
     subtitle: "3 meses de tratamento",
@@ -103,7 +111,8 @@ export const OfferCards = () => {
     discount: "20% OFF",
     ctaText: "Quero Resultados Completos Agora",
     isPopular: true,
-    imageQuantity: 3
+    imageQuantity: 3,
+    href: "https://eondigital.com.br/new_agendar_pedido?ofe=2572&ref=6693"
   }, {
     title: "5 POTES",
     subtitle: "5 meses de tratamento",
@@ -112,7 +121,8 @@ export const OfferCards = () => {
     originalPrice: 600,
     discount: "47% OFF",
     ctaText: "🔵 Quero Potência Máxima a Longo Prazo",
-    imageQuantity: 5
+    imageQuantity: 5,
+    href: "https://eondigital.com.br/new_agendar_pedido?ofe=2575&ref=6693"
   }];
   return <section className="py-12 sm:py-16 px-3 sm:px-4 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto">
