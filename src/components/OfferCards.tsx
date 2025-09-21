@@ -37,12 +37,12 @@ const OfferCard = ({
         return "/lovable-uploads/02839a20-cd24-4578-bf16-e199125d5f1f.png";
     }
   };
-  return <Card className={`relative bg-card/50 backdrop-blur-sm border-2 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover-lift ultra-smooth animate-scale-in ${isPopular ? 'border-energy shadow-energy/20 animate-glow' : 'border-border'}`}>
+  return <Card className={`relative bg-card/50 backdrop-blur-sm border-2 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover-lift ultra-smooth animate-scale-in ${isPopular ? 'border-energy shadow-energy/20 animate-glow' : 'border-border'} flex flex-col h-full`}>
       {isPopular && <Badge className="absolute -top-2 sm:-top-3 left-1/2 transform -translate-x-1/2 bg-energy text-white px-3 sm:px-4 py-1 text-xs sm:text-sm font-bold animate-bounce-soft">
           MAIS POPULAR
         </Badge>}
 
-      <CardContent className="p-4 sm:p-6 text-center">
+      <CardContent className="p-4 sm:p-6 text-center flex flex-col h-full">
         <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">{title}</h3>
         {subtitle && <p className="text-xs sm:text-sm text-muted-foreground mb-4">{subtitle}</p>}
 
@@ -80,14 +80,16 @@ const OfferCard = ({
          </div>
 
         {/* Botão de compra */}
-        <CTAButton 
-          variant="cta" 
-          size="lg" 
-          className="w-full animate-pulse-soft"
-          href={href}
-        >
-          {ctaText}
-        </CTAButton>
+        <div className="mt-auto">
+          <CTAButton 
+            variant="cta" 
+            size="lg" 
+            className="w-full animate-pulse-soft"
+            href={href}
+          >
+            QUERO RECEBER !
+          </CTAButton>
+        </div>
       </CardContent>
     </Card>;
 };
@@ -99,7 +101,7 @@ export const OfferCards = () => {
     currentPrice: 149.99,
     originalPrice: null,
     discount: null,
-    ctaText: "🔵 Quero Experimentar Agora",
+    ctaText: "QUERO RECEBER !",
     imageQuantity: 1,
     href: "https://eondigital.com.br/new_agendar_pedido?ofe=2566&ref=6693"
   }, {
@@ -109,7 +111,7 @@ export const OfferCards = () => {
     currentPrice: 249.99,
     originalPrice: 312.49,
     discount: "20% OFF",
-    ctaText: "Quero Resultados Completos Agora",
+    ctaText: "QUERO RECEBER !",
     isPopular: true,
     imageQuantity: 3,
     href: "https://eondigital.com.br/new_agendar_pedido?ofe=2572&ref=6693"
@@ -120,7 +122,7 @@ export const OfferCards = () => {
     currentPrice: 399.99,
     originalPrice: 600,
     discount: "47% OFF",
-    ctaText: "🔵 Quero Potência Máxima a Longo Prazo",
+    ctaText: "QUERO RECEBER !",
     imageQuantity: 5,
     href: "https://eondigital.com.br/new_agendar_pedido?ofe=2575&ref=6693"
   }];
